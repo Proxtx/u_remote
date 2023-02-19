@@ -8,6 +8,12 @@ const reload = document.getElementById("reload");
 const keysWrap = document.getElementById("keysWrap");
 const add = document.getElementById("add");
 const keysEditWrap = document.getElementById("keysEditWrap");
+const send = document.getElementById("send");
+const sequence = document.getElementById("sequence");
+
+send.addEventListener("click", () => {
+  remoteApi.simulate(cookie.pwd, sequence.component.value);
+});
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");

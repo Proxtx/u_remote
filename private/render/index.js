@@ -1,6 +1,6 @@
 import { auth } from "../../public/meta.js";
 
-export const server = (document, options) => {
-  if (auth(options.req.cookies.pwd)) return options.res.redirect("/main");
+export const server = async (document, options) => {
+  if (await auth(options.req.cookies.pwd)) return options.res.redirect("/main");
   options.res.redirect("/login");
 };
