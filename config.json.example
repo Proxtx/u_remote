@@ -1,0 +1,8 @@
+{
+  "port": 3008,
+  "apiUrl": "",
+  "activeClients": "app_name",
+  "simulate": "app_name",
+  "screenshot": "app_name",
+  "client": "client_name"
+}
