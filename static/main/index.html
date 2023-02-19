@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unify - Remote</title>
+    <link rel="manifest" href="/manifest.webmanifest" />
+  </head>
+  <body>
+    <m-overwrite-container>
+      <r-app-bar></r-app-bar>
+      <div id="contentWrap">
+        <div class="box" id="screensBox">
+          <h3>Screens</h3>
+          <div id="screensWrap">
+            <a>Loading</a>
+          </div>
+          <m-button id="reload">Reload</m-button>
+        </div>
+        <div class="box" id="screenBox">
+          <img id="mainScreen" />
+          <h3 id="hint">Select a screen</h3>
+        </div>
+        <m-tabs class="box" id="keysTabs">
+          <m-tab name="Keys">
+            <div id="keysWrap"></div>
+          </m-tab>
+          <m-tab name="Edit" id="keysEditWrap"
+            ><m-button stretch="true" id="add">Add</m-button></m-tab
+          >
+        </m-tabs>
+      </div>
+    </m-overwrite-container>
+    <script class="server" src="private/render/linker.js"></script>
+  </body>
+</html>

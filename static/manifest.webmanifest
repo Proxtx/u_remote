@@ -1,0 +1,17 @@
+{
+  "short_name": "Remote",
+  "name": "Unify SmartHome Device Remote",
+  "icons": [
+    { "src": "/lib/img/icon.png", "type": "image/png", "sizes": "490x490" },
+    { "src": "/lib/img/icon144.png", "type": "image/png", "sizes": "144x144" },
+    { "src": "/favicon.ico", "type": "image/ico", "sizes": "256x256" }
+  ],
+  "id": "/",
+  "start_url": "/",
+  "background_color": "#1f363d",
+  "display": "standalone",
+  "scope": "/",
+  "theme_color": "#1f363d",
+  "shortcuts": [],
+  "description": "Optimize the use of the screenshot, simulate and active client modules to create a remote for a Unify SmartHome Device"
+}

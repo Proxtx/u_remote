@@ -1,0 +1,52 @@
+#screensBox {
+  padding-top: calc(var(--contentSpacing) * 2);
+}
+
+#screensWrap {
+  height: 150px;
+  position: relative;
+  display: flex;
+  gap: var(--contentSpacing);
+  align-items: center;
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.screen {
+  height: 100%;
+  border-radius: var(--borderRadius);
+}
+
+#mainScreen {
+  display: none;
+  z-index: 2;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#screenBox {
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  transition: 0.5s;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#hint {
+  z-index: 1;
+}
+
+#keysTabs {
+  padding: 0;
+  height: 400px;
+}
+
+#keysWrap {
+  display: flex;
+  gap: var(--contentSpacing);
+  flex-wrap: wrap;
+}

@@ -1,0 +1,21 @@
+#bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(var(--contentSpacing) * 2);
+  background-color: var(--accentColor);
+}
+
+#status {
+  display: flex;
+  align-items: center;
+  gap: var(--contentSpacing);
+  justify-content: flex-end;
+}
+
+#statusIndicator {
+  height: 13px;
+  width: 13px;
+  border-radius: 50%;
+  background-color: var(--green);
+}

@@ -1,0 +1,22 @@
+{
+  "components": {
+    "app-bar": {
+      "name": "r-app-bar",
+      "template": "/components/app-bar/index.html",
+      "component": "/components/app-bar/main.js",
+      "styles": ["/main.css", "/components/app-bar/style.css"]
+    },
+    "key": {
+      "name": "r-key",
+      "template": "/components/key/index.html",
+      "component": "/components/key/main.js",
+      "styles": ["/main.css", "/components/key/style.css"]
+    },
+    "key-edit": {
+      "name": "r-key-edit",
+      "template": "/components/key-edit/index.html",
+      "component": "/components/key-edit/main.js",
+      "styles": ["/main.css", "/components/key-edit/style.css"]
+    }
+  }
+}

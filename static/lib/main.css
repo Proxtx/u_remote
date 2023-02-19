@@ -1,0 +1,84 @@
+:root {
+  --backgroundColor: #d9d9d9;
+  --borderRadius: 8px;
+  --accentColor: #1f363d;
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  --border: 1px solid var(--accentColor);
+  --mainBackground: #fcf7ff;
+  --contentSpacing: 8px;
+  --green: #70a9a1;
+  --red: #d81e5b;
+}
+
+:host {
+  --backgroundColor: #d9d9d9;
+  --borderRadius: 8px;
+  --accentColor: #1f363d;
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  --border: 1px solid var(--accentColor);
+  --mainBackground: #fcf7ff;
+  --contentSpacing: 8px;
+  --green: #70a9a1;
+  --red: #d81e5b;
+}
+
+m-overwrite-container {
+  --backgroundColor: #d9d9d9;
+  --borderRadius: 8px;
+  --accentColor: #1f363d;
+  --shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  --border: 1px solid var(--accentColor);
+  --mainBackground: #fcf7ff;
+  --contentSpacing: 8px;
+  --green: #70a9a1;
+  --red: #d81e5b;
+}
+
+@font-face {
+  font-family: VarelaRound;
+  src: url("/lib/VarelaRound-Regular.ttf");
+}
+
+body {
+  font-family: VarelaRound;
+  background-color: var(--mainBackground);
+  color: var(--mainBackground);
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: normal;
+}
+
+#contentWrap {
+  padding: var(--contentSpacing);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  gap: var(--contentSpacing);
+}
+
+r-app-bar {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.box {
+  background-color: var(--backgroundColor);
+  box-shadow: var(--shadow);
+  border: var(--border);
+  padding: var(--contentSpacing);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--contentSpacing);
+  color: var(--accentColor);
+  box-sizing: border-box;
+  border-radius: var(--borderRadius);
+}

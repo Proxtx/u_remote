@@ -1,0 +1,12 @@
+#wrap {
+  background-color: var(--accentColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  border-radius: var(--borderRadius);
+  overflow: hidden;
+  position: relative;
+  color: var(--mainBackground);
+}
