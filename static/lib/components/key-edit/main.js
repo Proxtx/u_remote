@@ -11,7 +11,7 @@ export class Component {
         this.nameElem.component.value,
         this.sequenceElem.component.value
       );
-      this.nameElem.component.value;
+      this.name = this.nameElem.component.value;
       reloadKeys(true);
     });
 
