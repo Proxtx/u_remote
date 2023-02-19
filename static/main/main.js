@@ -11,8 +11,11 @@ const keysEditWrap = document.getElementById("keysEditWrap");
 const send = document.getElementById("send");
 const sequence = document.getElementById("sequence");
 
-send.addEventListener("click", () => {
+send.addEventListener("click", async () => {
   remoteApi.simulate(cookie.pwd, sequence.component.value);
+  await new Promise((r) => setTimeout(r, 500));
+  mainScreen.src =
+    "data:image/png;base64," + (await loadScreen(activeScreen.index));
 });
 
 if ("serviceWorker" in navigator) {
