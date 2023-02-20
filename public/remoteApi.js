@@ -20,3 +20,7 @@ export const isActive = async (pwd) => {
   let definitions = await api.getDefinitions(pwd, config.activeClients);
   return definitions.methods[config.client] ? true : false;
 };
+
+export const command = async (pwd, program, args) => {
+  return await api.execute(pwd, config.command, "command", [program, args]);
+};

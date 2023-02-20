@@ -10,12 +10,28 @@ const add = document.getElementById("add");
 const keysEditWrap = document.getElementById("keysEditWrap");
 const send = document.getElementById("send");
 const sequence = document.getElementById("sequence");
+const sendCommand = document.getElementById("sendCommand");
+const program = document.getElementById("program");
+const argumentsInput = document.getElementById("arguments");
+
+sendCommand.addEventListener("click", async () => {
+  remoteApi.command(
+    cookie.pwd,
+    program.component.value,
+    argumentsInput.component.value
+  );
+  await new Promise((r) => setTimeout(r, 500));
+  if (activeScreen)
+    mainScreen.src =
+      "data:image/png;base64," + (await loadScreen(activeScreen.index));
+});
 
 send.addEventListener("click", async () => {
   remoteApi.simulate(cookie.pwd, sequence.component.value);
   await new Promise((r) => setTimeout(r, 500));
-  mainScreen.src =
-    "data:image/png;base64," + (await loadScreen(activeScreen.index));
+  if (activeScreen)
+    mainScreen.src =
+      "data:image/png;base64," + (await loadScreen(activeScreen.index));
 });
 
 if ("serviceWorker" in navigator) {

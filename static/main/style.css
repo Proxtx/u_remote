@@ -50,3 +50,9 @@
   gap: var(--contentSpacing);
   flex-wrap: wrap;
 }
+
+.tabWrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--contentSpacing);
+}

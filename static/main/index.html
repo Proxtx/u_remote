@@ -22,11 +22,6 @@
           <img id="mainScreen" />
           <h3 id="hint">Select a screen</h3>
         </div>
-        <div class="box">
-          <h3>Simulate</h3>
-          <m-text-input id="sequence" placeholder="Sequence"></m-text-input>
-          <m-button id="send">Send</m-button>
-        </div>
         <m-tabs class="box" id="keysTabs">
           <m-tab name="Keys">
             <div id="keysWrap"></div>
@@ -34,6 +29,24 @@
           <m-tab name="Edit" id="keysEditWrap"
             ><m-button stretch="true" id="add">Add</m-button></m-tab
           >
+          <m-tab name="Sequence">
+            <div class="tabWrap">
+              <h3>Simulate</h3>
+              <m-text-input id="sequence" placeholder="Sequence"></m-text-input>
+              <m-button id="send">Send</m-button>
+            </div>
+          </m-tab>
+          <m-tab name="Command"
+            ><div class="tabWrap">
+              <h3>Command</h3>
+              <m-text-input id="program" placeholder="Program"></m-text-input>
+              <m-text-input
+                id="arguments"
+                placeholder="Arguments"
+              ></m-text-input>
+              <m-button id="sendCommand">Send</m-button>
+            </div>
+          </m-tab>
         </m-tabs>
       </div>
     </m-overwrite-container>
