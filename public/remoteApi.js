@@ -24,3 +24,5 @@ export const isActive = async (pwd) => {
 export const command = async (pwd, program, args) => {
   return await api.execute(pwd, config.command, "command", [program, args]);
 };
+
+export const unifyUrl = config.apiUrl;

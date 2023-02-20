@@ -8,6 +8,7 @@
   --contentSpacing: 8px;
   --green: #70a9a1;
   --red: #d81e5b;
+  --accentColorTransparent: #1f363d2c;
 }
 
 :host {
@@ -20,6 +21,7 @@
   --contentSpacing: 8px;
   --green: #70a9a1;
   --red: #d81e5b;
+  --accentColorTransparent: #1f363d2c;
 }
 
 m-overwrite-container {
@@ -32,6 +34,7 @@ m-overwrite-container {
   --contentSpacing: 8px;
   --green: #70a9a1;
   --red: #d81e5b;
+  --accentColorTransparent: #1f363d2c;
 }
 
 @font-face {

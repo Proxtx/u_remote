@@ -20,19 +20,22 @@ sendCommand.addEventListener("click", async () => {
     program.component.value,
     argumentsInput.component.value
   );
-  await new Promise((r) => setTimeout(r, 500));
-  if (activeScreen)
-    mainScreen.src =
-      "data:image/png;base64," + (await loadScreen(activeScreen.index));
+  reloadActiveScreen;
 });
 
 send.addEventListener("click", async () => {
   remoteApi.simulate(cookie.pwd, sequence.component.value);
+  reloadActiveScreen();
+});
+
+const reloadActiveScreen = async () => {
   await new Promise((r) => setTimeout(r, 500));
   if (activeScreen)
     mainScreen.src =
       "data:image/png;base64," + (await loadScreen(activeScreen.index));
-});
+};
+
+window.reloadActiveScreen = reloadActiveScreen;
 
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("/service-worker.js");

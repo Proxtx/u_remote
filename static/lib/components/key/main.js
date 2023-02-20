@@ -5,6 +5,7 @@ export class Component {
     this.text = this.document.getElementById("text");
     this.wrap.addEventListener("click", () => {
       window.keysApi.pressKeys(cookie.pwd, this.name);
+      window.reloadActiveScreen();
     });
   }
 
