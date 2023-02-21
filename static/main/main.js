@@ -30,9 +30,12 @@ send.addEventListener("click", async () => {
 
 const reloadActiveScreen = async () => {
   await new Promise((r) => setTimeout(r, 500));
-  if (activeScreen)
-    mainScreen.src =
+  if (activeScreen) {
+    let srcString =
       "data:image/png;base64," + (await loadScreen(activeScreen.index));
+    mainScreen.src = srcString;
+    screensWrap.children[activeScreen.index].src = srcString;
+  }
 };
 
 window.reloadActiveScreen = reloadActiveScreen;
@@ -111,9 +114,7 @@ mainScreen.addEventListener("click", async (e) => {
     cookie.pwd,
     `{+MOUSE}${x},${y}{+LEFTMOUSE}{+WAIT}100{-LEFTMOUSE}`
   );
-  await new Promise((r) => setTimeout(r, 500));
-  mainScreen.src =
-    "data:image/png;base64," + (await loadScreen(activeScreen.index));
+  reloadActiveScreen();
 });
 
 const reloadKeys = async (skipEdit = false) => {
