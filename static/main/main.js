@@ -13,6 +13,7 @@ const sequence = document.getElementById("sequence");
 const sendCommand = document.getElementById("sendCommand");
 const program = document.getElementById("program");
 const argumentsInput = document.getElementById("arguments");
+const contentWrap = document.getElementById("contentWrap");
 
 sendCommand.addEventListener("click", async () => {
   remoteApi.command(
@@ -141,5 +142,13 @@ add.addEventListener("click", async () => {
 
 window.reloadKeys = reloadKeys;
 
-reloadKeys();
-reloadScreens();
+if (await remoteApi.isActive(cookie.pwd)) {
+  reloadKeys();
+  reloadScreens();
+} else {
+  contentWrap.innerHTML =
+    '<div class="box"><h3>Client is offline.</h3> <m-button onclick="setTimeout(() => location.reload(), 100)">Reload</m-button></div>';
+  document
+    .querySelector("m-overwrite-container")
+    .component.component.findAndApplyCascadingVars();
+}
