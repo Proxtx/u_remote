@@ -32,10 +32,15 @@ send.addEventListener("click", async () => {
 const reloadActiveScreen = async () => {
   await new Promise((r) => setTimeout(r, 500));
   if (activeScreen) {
-    let srcString =
-      "data:image/png;base64," + (await loadScreen(activeScreen.index));
+    let loadedData = await loadScreen(activeScreen.index);
+    let srcString = "data:image/png;base64," + loadedData;
     mainScreen.src = srcString;
     screensWrap.children[activeScreen.index].src = srcString;
+    screensWrap.children[activeScreen.index].screen = {
+      ...activeScreen,
+      index: activeScreen.index,
+      data: loadedData,
+    };
   }
 };
 
@@ -79,9 +84,10 @@ const reloadScreens = async () => {
   let screens = await loadScreens();
   for (let screen of screens) {
     let img = document.createElement("img");
+    img.screen = screen;
     img.src = "data:image/png;base64," + screen.data;
-    img.addEventListener("click", () => {
-      selectScreen(screen);
+    img.addEventListener("click", function () {
+      selectScreen(this.screen);
     });
     img.classList.add("screen");
 
