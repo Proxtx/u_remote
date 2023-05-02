@@ -57,7 +57,10 @@ reload.addEventListener("click", () => {
 const loadScreen = async (index) => {
   let screenshot = "";
   do {
-    if (screenshot != "") alert("Screenshot failed to load. Retry.");
+    if (screenshot != "") {
+      //alert("Screenshot failed to load. Retry.");
+      await new Promise((r) => setTimeout(r, 5000));
+    }
     screenshot = await remoteApi.screenshot(cookie.pwd, index);
   } while (screenshot.length < 500 || !screenshot);
   return screenshot;
