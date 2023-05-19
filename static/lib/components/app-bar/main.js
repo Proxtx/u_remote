@@ -12,11 +12,5 @@ export class Component {
 
       this.status.style.display = "flex";
     })();
-
-    this.status.addEventListener("click", async () => {
-      let u = new URL(await window.remoteApi.unifyUrl);
-      u.pathname = "/";
-      location.href = u.href;
-    });
   }
 }
